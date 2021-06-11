@@ -36,19 +36,29 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        dev {
+            buildConfigField 'String', "BASE_URL", "\"https://cdn.sixt.io/codingtask\""
+        }
+    }
+
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation androidXDependencies
+    implementation daggerDependencies
     kapt commonKaptDependencies
+    implementation androidXDependencies
     implementation commonDependencies
     implementation archDependencies
     implementation networkDependencies
-    implementation daggerDependencies
     testImplementation commonTestDependencies
     androidTestImplementation commonInstrumentationTestDependencies
 }

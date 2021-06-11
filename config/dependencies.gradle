@@ -68,7 +68,9 @@ ext {
     ]
 
     daggerDependencies = [
-            "com.google.dagger:dagger:${daggerVersion}",
+            "com.google.dagger:dagger:$daggerVersion",
+            "com.google.dagger:dagger-android:$daggerVersion",
+            "com.google.dagger:dagger-android-support:$daggerVersion" // if you use the support libraries
     ]
 
     commonTestDependencies = [
