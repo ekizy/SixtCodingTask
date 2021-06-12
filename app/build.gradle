@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -54,6 +55,8 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation daggerDependencies
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt commonKaptDependencies
     implementation androidXDependencies
     implementation commonDependencies

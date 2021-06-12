@@ -2,6 +2,7 @@ package com.ekiz.sixtcodingtask.injection.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.ekiz.sixtcodingtask.scenes.carsoverview.CarsOverviewViewModel
 import com.ekiz.sixtcodingtask.scenes.main.MainViewModel
 import dagger.Binds
 import dagger.Module
@@ -17,5 +18,10 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(MainViewModel::class)
     abstract fun bindsMainViewModel(mainViewModel: MainViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CarsOverviewViewModel::class)
+    abstract fun bindsCarsOverviewViewModel(carsOverviewViewModel: CarsOverviewViewModel): ViewModel
 
 }

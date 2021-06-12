@@ -80,7 +80,8 @@ ext {
 
     commonInstrumentationTestDependencies = [
             "androidx.test.ext:junit:$testCoreVersion",
-            "androidx.test.espresso:espresso-core:$espressoVersion"
+            "androidx.test.espresso:espresso-core:$espressoVersion",
+            "androidx.navigation:navigation-testing:$navigationVersion"
     ]
 
 }
