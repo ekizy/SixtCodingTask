@@ -2,7 +2,7 @@ package com.ekiz.sixtcodingtask.injection.module
 
 import android.content.Context
 import com.ekiz.sixtcodingtask.application.CodingTaskApplication
-import com.squareup.moshi.Moshi
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -17,8 +17,8 @@ internal class AppModule {
 
     @Provides
     @Singleton
-    fun provideMoshi(): Moshi {
-        return Moshi.Builder().build()
+    fun provideGson(): Gson {
+        return Gson()
     }
 
 }

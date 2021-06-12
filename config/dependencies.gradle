@@ -11,7 +11,7 @@ ext {
     androidXAppCompatVersion = '1.3.0'
     retrofitVersion = '2.9.0'
     okHttpVersion = '4.9.0'
-    moshiVersion = '1.12.0'
+    gsonVersion = '2.8.7'
     lifecycleVersion = '1.1.0'
     roomVersion = '1.1.1'
     navigationVersion = '2.3.5'
@@ -33,7 +33,6 @@ ext {
             "android.arch.lifecycle:compiler:$lifecycleVersion",
             "com.google.dagger:dagger-compiler:${daggerVersion}",
             "com.google.dagger:dagger-android-processor:${daggerVersion}",
-            "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
     ]
 
     commonDependencies = [
@@ -48,8 +47,8 @@ ext {
             "com.squareup.okhttp3:mockwebserver:$okHttpVersion",
             "com.squareup.retrofit2:retrofit:$retrofitVersion",
             "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
-            "com.squareup.retrofit2:converter-moshi:$retrofitVersion",
-            "com.squareup.moshi:moshi-kotlin:$moshiVersion"
+            "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            "com.google.code.gson:gson:$gsonVersion"
     ]
 
     archDependencies = [

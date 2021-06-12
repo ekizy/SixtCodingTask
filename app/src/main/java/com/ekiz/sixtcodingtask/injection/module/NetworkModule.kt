@@ -1,12 +1,12 @@
 package com.ekiz.sixtcodingtask.injection.module
 
 import com.ekiz.sixtcodingtask.BuildConfig
-import com.squareup.moshi.Moshi
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -14,10 +14,10 @@ internal class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(moshi: Moshi): Retrofit {
+    fun provideRetrofit(gson: Gson): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .client(OkHttpClient.Builder().build())
             .build()
     }

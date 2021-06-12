@@ -41,10 +41,4 @@ abstract class BaseFragment<VM : BaseViewModel, B : androidx.databinding.ViewDat
         return binder.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-    }
-
-
 }
