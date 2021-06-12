@@ -15,7 +15,7 @@ class CarsOverviewFragment : BaseFragment<CarsOverviewViewModel, FragmentCarsOve
     override fun layoutId(): Int = R.layout.fragment_cars_overview
 
     override fun initialize() {
-        TODO("Not yet implemented")
+        print("asdsds")
     }
 
     companion object {
