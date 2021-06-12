@@ -13,16 +13,14 @@ import dagger.android.AndroidInjector
 import javax.inject.Singleton
 
 @Singleton
-@Component(
-    modules = [
+@Component(modules = [
         AndroidInjectionModule::class,
         ActivitiesModule::class,
         FragmentsModule::class,
         AppModule::class,
         NetworkModule::class,
         ViewModelModule::class
-    ]
-)
+    ])
 
 internal interface AppComponent : AndroidInjector<CodingTaskApplication> {
 
