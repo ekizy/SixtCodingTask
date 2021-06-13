@@ -3,8 +3,9 @@ package com.ekiz.sixtcodingtask.data
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import javax.inject.Inject
 
-class NetworkHandler(private val context: Context) {
+class NetworkHandler @Inject constructor(private val context: Context) {
 
     fun hasInternetConnection(): Boolean {
         val connectivityManager =

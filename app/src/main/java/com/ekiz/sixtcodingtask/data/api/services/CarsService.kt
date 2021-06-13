@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface CarsService {
 
-    @GET("cars")
-    fun getCars(): Call<List<CarAPIModel>>
+    @GET("carsdadasdsd")
+    suspend fun getCars(): List<CarAPIModel>
 
 }

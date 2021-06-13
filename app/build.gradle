@@ -44,7 +44,7 @@ android {
 
     productFlavors {
         dev {
-            buildConfigField 'String', "BASE_URL", "\"https://cdn.sixt.io/codingtask\""
+            buildConfigField 'String', "BASE_URL", "\"https://cdn.sixt.io/codingtask/\""
         }
     }
 
