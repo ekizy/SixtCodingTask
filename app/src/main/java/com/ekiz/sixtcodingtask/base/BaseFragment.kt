@@ -21,7 +21,7 @@ abstract class BaseFragment<VM : BaseViewModel, B : androidx.databinding.ViewDat
     protected lateinit var binder: B
 
     abstract fun layoutId(): Int
-    abstract fun initialize()
+    abstract fun initialize(savedInstanceState: Bundle?)
 
     @Suppress("UNCHECKED_CAST")
     protected open val viewModel by lazy {
@@ -37,7 +37,7 @@ abstract class BaseFragment<VM : BaseViewModel, B : androidx.databinding.ViewDat
     ): View? {
         binder = DataBindingUtil.inflate(inflater, layoutId(), container, false)
         binder.lifecycleOwner = viewLifecycleOwner
-        initialize()
+        initialize(savedInstanceState)
         return binder.root
     }
 
