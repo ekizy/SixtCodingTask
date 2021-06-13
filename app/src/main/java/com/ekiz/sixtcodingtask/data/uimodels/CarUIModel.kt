@@ -1,20 +1,23 @@
 package com.ekiz.sixtcodingtask.data.uimodels
 
-import com.google.gson.annotations.SerializedName
+class CarUIModel(val id: String? = null,
+                 val modelIdentifier: String? = null,
+                 val modelName: String? = null,
+                 val name: String? = null,
+                 val make: String? = null,
+                 val group: String? = null,
+                 val color: String? = null,
+                 val series: String? = null,
+                 val fuelType: FuelType? = null,
+                 val fuelLevel: String? = null,
+                 val transmissionType: TransmissionType? = null,
+                 val licensePlate: String? = null,
+                 val latitude: Double? = null,
+                 val longitude: Double? = null,
+                 val innerCleanlinessType: InnerCleanlinessType? = null,
+                 val carImageUrl: String? = null) {
 
-class CarUIModel (private val id: String? = null,
-                  private val modelIdentifier: String? = null,
-                  private val modelName: String? = null,
-                  private val name: String? = null,
-                  private val make: String? = null,
-                  private val group: String? = null,
-                  private val color: String? = null,
-                  private val series: String? = null,
-                  private val fuelType: String? = null,
-                  private val fuelLevel: String? = null,
-                  private val transmission: String? = null,
-                  private val licensePlate: String? = null,
-                  private val latitude: Double? = null,
-                  private val longitude: Double? = null,
-                  private val innerCleanliness: String? = null,
-                  private val carImageUrl: String? = null)
+    val brandSeriesText: String
+        get() = String.format("%s %s", make, series)
+
+}
