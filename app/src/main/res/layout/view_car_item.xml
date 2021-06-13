@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/carImageView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:scaleType="fitXY"
+                tools:src="@drawable/default_car_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carImageView"
+                tools:text="Vanessa"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carBrandSeriesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carNameTextView"
+                tools:text="BMW Series Mini"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carModelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/carBrandSeriesTextView"
+                app:layout_constraintTop_toTopOf="@id/carBrandSeriesTextView"
+                tools:text="Model: Mini"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fuelTypeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/carModelTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Fuel type: Diesel"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fuelLevelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/fuelTypeTextView"
+                app:layout_constraintStart_toEndOf="@id/fuelTypeTextView"
+                tools:text="Fuel level: %55"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/transmissionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/fuelTypeTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Transmission: M"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cleanlinessTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/transmissionTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text= "Cleanliness: Regular"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
