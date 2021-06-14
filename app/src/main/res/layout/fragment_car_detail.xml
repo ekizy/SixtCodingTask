@@ -41,7 +41,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/carDetailImageView"
                 android:layout_marginTop="@dimen/margin_8"
-                android:text="Name:"
+                android:text="@string/detail_car_name_title"
                 android:textStyle="bold"
                 android:textSize="@dimen/text_size_22"/>
 
@@ -68,7 +68,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/carNameTextView"
                 android:layout_marginTop="@dimen/margin_8"
-                android:text="Make:"
+                android:text="@string/detail_car_make_title"
                 android:textStyle="bold"
                 android:textSize="@dimen/text_size_22"/>
 
@@ -95,7 +95,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/carMakeTextView"
                 android:layout_marginTop="@dimen/margin_8"
-                android:text="Model Name:"
+                android:text="@string/detail_car_model_name_title"
                 android:textStyle="bold"
                 android:textSize="@dimen/text_size_22"/>
 
@@ -124,7 +124,7 @@
                 app:layout_constraintTop_toBottomOf="@id/carModelNameTitleTextView"
                 android:layout_marginTop="@dimen/margin_8"
                 android:textStyle="bold"
-                android:text="Group:"
+                android:text="@string/detail_car_group_title"
                 android:textSize="@dimen/text_size_22"/>
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -151,7 +151,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/carColorTextView"
                 android:layout_marginTop="@dimen/margin_8"
                 android:textStyle="bold"
-                android:text="Color:"
+                android:text="@string/detail_car_color_title"
                 android:textSize="@dimen/text_size_22"/>
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -178,7 +178,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/carSeriesTextView"
                 android:layout_marginTop="@dimen/margin_8"
                 android:textStyle="bold"
-                android:text="Series:"
+                android:text="@string/detail_car_series_title"
                 android:textSize="@dimen/text_size_22" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -206,7 +206,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/carFuelTypeTextView"
                 android:layout_marginTop="@dimen/margin_8"
                 android:textStyle="bold"
-                android:text="Fuel Type:"
+                android:text="@string/detail_car_fuel_type_title"
                 android:textSize="@dimen/text_size_22"/>
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -234,7 +234,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/carFuelLevelTextView"
                 android:layout_marginTop="@dimen/margin_8"
                 android:textStyle="bold"
-                android:text="Fuel Level:"
+                android:text="@string/detail_car_fuel_level_title"
                 android:textSize="@dimen/text_size_22" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -261,7 +261,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/carTransmissionTextView"
                 android:layout_marginTop="@dimen/margin_8"
                 android:textStyle="bold"
-                android:text="Tranmission:"
+                android:text="@string/detail_car_transmission_title"
                 android:textSize="@dimen/text_size_22"/>
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -289,7 +289,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/carLicensePlateTextView"
                 android:layout_marginTop="@dimen/margin_8"
                 android:textStyle="bold"
-                android:text="License Plate:"
+                android:text="@string/detail_car_license_plate_title"
                 android:textSize="@dimen/text_size_22"/>
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -316,7 +316,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/carInnerCleanlinessTextView"
                 android:layout_marginTop="@dimen/margin_8"
                 android:textStyle="bold"
-                android:text="Inner Cleanliness:"
+                android:text="@string/detail_car_inner_cleanliness_title"
                 android:textSize="@dimen/text_size_22"/>
 
             <androidx.appcompat.widget.AppCompatTextView

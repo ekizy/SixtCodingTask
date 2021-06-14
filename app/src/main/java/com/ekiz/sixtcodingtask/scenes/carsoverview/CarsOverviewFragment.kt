@@ -30,6 +30,7 @@ class CarsOverviewFragment : BaseFragment<CarsOverviewViewModel, FragmentCarsOve
         viewModel.error.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_LONG).show()
         }
+        viewModel.getCars()
     }
 
     override fun onCarItemClicked(adapterPosition: Int) {
