@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="carModel"
+            type="com.ekiz.sixtcodingtask.data.uimodels.CarUIModel" />
+
+        <variable
+            name="viewModel"
+            type="com.ekiz.sixtcodingtask.scenes.cardetail.CarDetailViewModel"/>
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp"
+            android:paddingBottom="@dimen/margin_8">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/carDetailImageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/default_car_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carNameTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/carNameTextView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carDetailImageView"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="Name:"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_4"
+                android:text="@{carModel.name}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/carNameTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/carNameTitleTextView"
+                tools:text="Max"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carMakeTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/carMakeTextView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carNameTextView"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="Make:"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carMakeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/carMakeTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/carMakeTitleTextView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:text="@{carModel.make}"
+                tools:text="BMW"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carModelNameTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/carModelNameTextView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carMakeTextView"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="Model Name:"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carModelNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/carModelNameTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/carModelNameTitleTextView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:text="@{carModel.modelName}"
+                tools:text="MINI"
+                android:textSize="@dimen/text_size_22"/>
+
+            <!-- Group -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carGroupTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/carGroupTextView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carModelNameTitleTextView"
+                android:layout_marginTop="@dimen/margin_8"
+                android:textStyle="bold"
+                android:text="Group:"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carGroupTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/carGroupTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/carGroupTitleTextView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:text="@{carModel.group}"
+                tools:text="MINI"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carColorTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carGroupTextView"
+                app:layout_constraintEnd_toStartOf="@+id/carColorTextView"
+                android:layout_marginTop="@dimen/margin_8"
+                android:textStyle="bold"
+                android:text="Color:"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carColorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/carColorTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/carColorTitleTextView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:text="@{carModel.colorType.value}"
+                tools:text="Midnight Black"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carSeriesTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carColorTextView"
+                app:layout_constraintEnd_toStartOf="@+id/carSeriesTextView"
+                android:layout_marginTop="@dimen/margin_8"
+                android:textStyle="bold"
+                android:text="Series:"
+                android:textSize="@dimen/text_size_22" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carSeriesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/carSeriesTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/carSeriesTitleTextView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:text="@{carModel.series}"
+                tools:text="MINI"
+                android:textSize="@dimen/text_size_22"/>
+
+            <!-- Fuel Type -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carFuelTypeTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carSeriesTextView"
+                app:layout_constraintEnd_toStartOf="@+id/carFuelTypeTextView"
+                android:layout_marginTop="@dimen/margin_8"
+                android:textStyle="bold"
+                android:text="Fuel Type:"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carFuelTypeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/carFuelTypeTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/carFuelTypeTitleTextView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:text="@{carModel.fuelType.value}"
+                tools:text="DIESEL"
+                android:textSize="@dimen/text_size_22"/>
+
+            <!-- Fuel Level -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carFuelLevelTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carFuelTypeTextView"
+                app:layout_constraintEnd_toStartOf="@+id/carFuelLevelTextView"
+                android:layout_marginTop="@dimen/margin_8"
+                android:textStyle="bold"
+                android:text="Fuel Level:"
+                android:textSize="@dimen/text_size_22" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carFuelLevelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/carFuelLevelTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/carFuelLevelTitleTextView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:text="@{carModel.fuelLevel}"
+                tools:text="75 %"
+                android:textSize="@dimen/text_size_22" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carTramsmissionTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carFuelLevelTextView"
+                app:layout_constraintEnd_toStartOf="@+id/carTransmissionTextView"
+                android:layout_marginTop="@dimen/margin_8"
+                android:textStyle="bold"
+                android:text="Tranmission:"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carTransmissionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/carTramsmissionTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/carTramsmissionTitleTextView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:text="@{carModel.transmissionType.value}"
+                tools:text="Automatic"
+                android:textSize="@dimen/text_size_22" />
+
+            <!-- License Plate -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carLicensePlateTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carTransmissionTextView"
+                app:layout_constraintEnd_toStartOf="@+id/carLicensePlateTextView"
+                android:layout_marginTop="@dimen/margin_8"
+                android:textStyle="bold"
+                android:text="License Plate:"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carLicensePlateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/carLicensePlateTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/carLicensePlateTitleTextView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:text="@{carModel.licensePlate}"
+                tools:text="M-VO0259"
+                android:textSize="@dimen/text_size_22" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carInnerCleanlinessTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carLicensePlateTextView"
+                app:layout_constraintEnd_toStartOf="@+id/carInnerCleanlinessTextView"
+                android:layout_marginTop="@dimen/margin_8"
+                android:textStyle="bold"
+                android:text="Inner Cleanliness:"
+                android:textSize="@dimen/text_size_22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carInnerCleanlinessTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/carInnerCleanlinessTitleTextView"
+                app:layout_constraintTop_toTopOf="@id/carInnerCleanlinessTitleTextView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:text="@{carModel.innerCleanlinessType.value}"
+                tools:text="Very Clean"
+                android:textSize="@dimen/text_size_22"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

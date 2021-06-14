@@ -1,6 +1,7 @@
 package com.ekiz.sixtcodingtask.scenes.carsoverview
 
 import android.os.Bundle
+import androidx.navigation.fragment.findNavController
 import com.ekiz.sixtcodingtask.R
 import com.ekiz.sixtcodingtask.base.BaseFragment
 import com.ekiz.sixtcodingtask.data.uimodels.CarUIModel
@@ -34,7 +35,8 @@ class CarsOverviewFragment : BaseFragment<CarsOverviewViewModel, FragmentCarsOve
     }
 
     override fun onDetailButtonClicked(carItem: CarUIModel) {
-        //TODO show detail screen
+        val action = CarsOverviewFragmentDirections.actionCarsOverviewFragmentToCarDetailFragment(carItem)
+        findNavController().navigate(action)
     }
 
     fun showMarkers(carItems: List<CarUIModel>) {

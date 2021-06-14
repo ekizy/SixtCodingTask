@@ -6,5 +6,19 @@
     <fragment
         android:id="@+id/carsOverviewFragment"
         android:name="com.ekiz.sixtcodingtask.scenes.carsoverview.CarsOverviewFragment"
-        android:label="CarsOverviewFragment" />
+        android:label="CarsOverviewFragment" >
+        <action
+            android:id="@+id/action_carsOverviewFragment_to_carDetailFragment"
+            app:destination="@id/carDetailFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/carDetailFragment"
+        android:name="com.ekiz.sixtcodingtask.scenes.cardetail.CarDetailFragment"
+        android:label="CarDetailFragment" >
+        <argument
+            android:name="carModel"
+            app:argType="com.ekiz.sixtcodingtask.data.uimodels.CarUIModel" />
+    </fragment>
 </navigation>
