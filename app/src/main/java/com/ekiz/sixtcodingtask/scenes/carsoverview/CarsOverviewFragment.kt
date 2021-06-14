@@ -18,7 +18,6 @@ import com.google.android.gms.maps.model.MarkerOptions
 
 class CarsOverviewFragment : BaseFragment<CarsOverviewViewModel, FragmentCarsOverviewBinding>(), CarsOverviewAdapter.CarItemClickListener {
 
-
     var markerList = mutableListOf<Marker>()
 
     override fun layoutId(): Int = R.layout.fragment_cars_overview

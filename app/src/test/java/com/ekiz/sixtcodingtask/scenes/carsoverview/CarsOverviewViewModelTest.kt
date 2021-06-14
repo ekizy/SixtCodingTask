@@ -1,10 +1,7 @@
 package com.ekiz.sixtcodingtask.scenes.carsoverview
 
-import com.ekiz.sixtcodingtask.data.api.datasource.CarsRemoteDataSource
 import com.ekiz.sixtcodingtask.data.api.responsemodels.CarAPIModel
-import com.ekiz.sixtcodingtask.data.api.services.CarsService
 import com.ekiz.sixtcodingtask.domain.GetCarsUseCase
-import com.ekiz.sixtcodingtask.domain.GetCarsUseCaseTest
 import com.ekiz.sixtcodingtask.helper.MockJSONHelper
 import com.ekiz.sixtcodingtask.util.ErrorException
 import com.ekiz.sixtcodingtask.util.Response

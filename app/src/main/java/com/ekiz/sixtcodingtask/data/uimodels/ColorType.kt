@@ -1,7 +1,6 @@
 package com.ekiz.sixtcodingtask.data.uimodels
 
 enum class ColorType (val value: String) {
-
     MIDNIGHT_BLACK("Midnight Black"),
     HOT_CHOCOLATE("Hot Chocolate"),
     MIDNIGHT_BLACK_METAL("Midnight Black Metal"),
@@ -12,5 +11,4 @@ enum class ColorType (val value: String) {
     ICED_CHOCOLATE_METAL("Iced Chocolate Metal"),
     ABSOLUTE_BLACK_METAL("Absolute Black Metal"),
     BLACK("Black");
-
 }
