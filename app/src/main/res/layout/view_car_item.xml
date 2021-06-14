@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="car"
+            type="com.ekiz.sixtcodingtask.data.uimodels.CarUIModel"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:strokeWidth="@dimen/material_card_view_stroke_width">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/carImageView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:scaleType="fitXY"
+                tools:src="@drawable/default_car_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carImageView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:layout_marginEnd="@dimen/margin_4"
+                android:text="@{car.name}"
+                tools:text="Vanessa"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carBrandSeriesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carNameTextView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:layout_marginEnd="@dimen/margin_4"
+                android:text="@{car.brandSeriesText}"
+                tools:text="BMW Mini"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/carModelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carBrandSeriesTextView"
+                android:layout_marginStart="@dimen/margin_4"
+                android:layout_marginEnd="@dimen/margin_4"
+                android:text="@{car.modelName}"
+                tools:text="Mini Countryman"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/detailButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carModelTextView"
+                android:backgroundTint="@color/black"
+                android:text="@string/detail_button_text"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_4"
+                app:layout_constraintTop_toBottomOf="@id/carModelTextView"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

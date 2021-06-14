@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-parcelize")
+}
+
+android {
+
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.ekiz.sixtcodingtask"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+    
+    buildTypes {
+        debug {}
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        dev {
+            buildConfigField 'String', "BASE_URL", "\"https://cdn.sixt.io/codingtask/\""
+        }
+    }
+
+    testOptions {
+        unitTests {
+            // Prevent exceptions when the app tries to access Android platforms in unit tests.
+            returnDefaultValues true
+        }
+        animationsDisabled true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation daggerDependencies
+    kapt commonKaptDependencies
+    implementation androidXDependencies
+    implementation commonDependencies
+    implementation archDependencies
+    implementation networkDependencies
+    testImplementation commonTestDependencies
+    androidTestImplementation commonInstrumentationTestDependencies
+}

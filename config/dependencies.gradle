@@ -1,0 +1,95 @@
+ext {
+
+    compiler = [
+            java  : JavaVersion.VERSION_1_8,
+            kotlin: '1.4.21'
+    ]
+
+    // Libraries
+    daggerVersion = '2.37'
+    androidXCoreVersion = '1.5.0'
+    androidXAppCompatVersion = '1.3.0'
+    retrofitVersion = '2.9.0'
+    okHttpVersion = '4.9.0'
+    gsonVersion = '2.8.7'
+    lifecycleVersion = '1.1.0'
+    roomVersion = '1.1.1'
+    navigationVersion = '2.3.5'
+    constraintLayoutVersion = '2.0.4'
+    androidKtxVersion = '1.5.0'
+    kotlinxCoroutinesVersion = '1.3.9'
+    glideVersion = '4.11.0'
+    mapsVersion =  '17.0.1'
+    androidXLegacySupportVersion = '1.0.0'
+
+// Testing
+    jUnitVersion = '4.13.2'
+    mockitoVersion = '3.3.3'
+    robolectricVersion = '4.5.1'
+    androidXJunitVersion = '1.1.2'
+    testCoreVersion = '1.1.0'
+    espressoVersion='3.3.0'
+
+// app dependencies
+    commonKaptDependencies = [
+            "android.arch.lifecycle:compiler:$lifecycleVersion",
+            "com.google.dagger:dagger-compiler:$daggerVersion",
+            "com.google.dagger:dagger-android-processor:$daggerVersion",
+    ]
+
+    commonDependencies = [
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$compiler.kotlin",
+            "org.jetbrains.kotlin:kotlin-stdlib:$compiler.kotlin",
+            "androidx.core:core-ktx:$androidKtxVersion",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinxCoroutinesVersion",
+            "org.jetbrains.kotlin:kotlin-reflect:$compiler.kotlin",
+            "com.github.bumptech.glide:glide:$glideVersion",
+            "com.google.android.gms:play-services-maps:$mapsVersion"
+    ]
+
+    networkDependencies = [
+            "com.squareup.okhttp3:mockwebserver:$okHttpVersion",
+            "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+            "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            "com.google.code.gson:gson:$gsonVersion"
+    ]
+
+    archDependencies = [
+            "android.arch.lifecycle:runtime:$lifecycleVersion",
+            "android.arch.lifecycle:extensions:$lifecycleVersion",
+            "android.arch.lifecycle:reactivestreams:$lifecycleVersion",
+            "android.arch.persistence.room:runtime:$roomVersion",
+            "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+            "androidx.navigation:navigation-ui-ktx:$navigationVersion",
+    ]
+    androidXDependencies = [
+            "androidx.core:core-ktx:$androidXCoreVersion",
+            "androidx.appcompat:appcompat:$androidXAppCompatVersion",
+            "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            "com.google.android.material:material:$androidXAppCompatVersion",
+            "androidx.legacy:legacy-support-v4:$androidXLegacySupportVersion"
+    ]
+
+    daggerDependencies = [
+            "com.google.dagger:dagger:$daggerVersion",
+            "com.google.dagger:dagger-android:$daggerVersion",
+            "com.google.dagger:dagger-android-support:$daggerVersion" // if you use the support libraries
+    ]
+
+    commonTestDependencies = [
+            "junit:junit:$jUnitVersion",
+            "org.mockito:mockito-core:$mockitoVersion",
+            "org.robolectric:robolectric:$robolectricVersion",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinxCoroutinesVersion",
+            "androidx.test:core:$testCoreVersion"
+
+    ]
+
+    commonInstrumentationTestDependencies = [
+            "androidx.test.ext:junit:$androidXJunitVersion",
+            "androidx.test.espresso:espresso-core:$espressoVersion",
+            "androidx.navigation:navigation-testing:$navigationVersion"
+    ]
+
+}
