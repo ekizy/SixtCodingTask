@@ -22,7 +22,8 @@
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MapsFragment" />
+            tools:context=".MapsFragment"
+            android:visibility="invisible"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -31,7 +32,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:carItems="@{viewModel.result}"
             app:carItemClickListener="@{carItemClickListener}"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:visibility="invisible"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
