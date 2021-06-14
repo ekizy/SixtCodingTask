@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class CarsRemoteDataSource @Inject constructor(private val service: CarsService) {
 
-    fun getCars(): Call<List<CarAPIModel>> {
+    suspend fun getCars(): List<CarAPIModel> {
         return service.getCars()
     }
 

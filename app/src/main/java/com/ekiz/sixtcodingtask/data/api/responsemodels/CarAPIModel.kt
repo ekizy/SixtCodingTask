@@ -1,6 +1,9 @@
 package com.ekiz.sixtcodingtask.data.api.responsemodels
 
 import com.ekiz.sixtcodingtask.data.uimodels.CarUIModel
+import com.ekiz.sixtcodingtask.data.uimodels.FuelType
+import com.ekiz.sixtcodingtask.data.uimodels.InnerCleanlinessType
+import com.ekiz.sixtcodingtask.data.uimodels.TransmissionType
 import com.google.gson.annotations.SerializedName
 
 data class CarAPIModel(@SerializedName("id")
@@ -24,7 +27,7 @@ data class CarAPIModel(@SerializedName("id")
                        @SerializedName("fuelLevel")
                        private val fuelLevel: String? = null,
                        @SerializedName("transmission")
-                       private val transmission: String? = null,
+                       private val transmissionType: String? = null,
                        @SerializedName("licensePlate")
                        private val licensePlate: String? = null,
                        @SerializedName("latitude")
@@ -45,14 +48,40 @@ data class CarAPIModel(@SerializedName("id")
             group,
             color,
             series,
-            fuelType,
+            getFuelType(),
             fuelLevel,
-            transmission,
+            getTransmissionType(),
             licensePlate,
             latitude,
             longitude,
-            innerCleanliness,
+            getInnerCleanlinessType(),
             carImageUrl
     )
+
+    private fun getTransmissionType() : TransmissionType? {
+       return when (transmissionType) {
+            "A" -> TransmissionType.AUTOMATIC
+            "M" -> TransmissionType.MANUAL
+            else -> null
+        }
+    }
+
+    private fun getInnerCleanlinessType() : InnerCleanlinessType? {
+        return when (innerCleanliness) {
+            "VERY_CLEAN" -> InnerCleanlinessType.VERY_CLEAN
+            "CLEAN" -> InnerCleanlinessType.CLEAN
+            "REGULAR" -> InnerCleanlinessType.REGULAR
+            else -> null
+        }
+    }
+
+    private fun getFuelType() : FuelType? {
+        return when (fuelType) {
+            "P" -> FuelType.PETROL
+            "D" -> FuelType.DIESEL
+            "E" -> FuelType.ETHANOL
+            else -> null
+        }
+    }
 
 }

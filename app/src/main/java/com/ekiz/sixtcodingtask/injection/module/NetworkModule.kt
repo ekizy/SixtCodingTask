@@ -1,6 +1,7 @@
 package com.ekiz.sixtcodingtask.injection.module
 
 import com.ekiz.sixtcodingtask.BuildConfig
+import com.ekiz.sixtcodingtask.data.api.services.CarsService
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -20,6 +21,12 @@ internal class NetworkModule {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(OkHttpClient.Builder().build())
             .build()
+    }
+
+    @Provides
+    @Singleton
+    internal fun provideCarsService(retrofit: Retrofit): CarsService {
+        return retrofit.create(CarsService::class.java)
     }
 
 }

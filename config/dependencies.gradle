@@ -18,7 +18,7 @@ ext {
     constraintLayoutVersion = '2.0.4'
     androidKtxVersion = '1.5.0'
     kotlinxCoroutinesVersion = '1.3.9'
-    glideVersion = '4.5.0'
+    glideVersion = '4.11.0'
     mapsVersion =  '17.0.1'
     androidXLegacySupportVersion = '1.0.0'
 
