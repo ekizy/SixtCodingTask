@@ -1,6 +1,9 @@
 package com.ekiz.sixtcodingtask.scenes.carsoverview
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.ekiz.sixtcodingtask.R
 import com.ekiz.sixtcodingtask.base.BaseFragment
 import com.ekiz.sixtcodingtask.data.uimodels.CarUIModel
@@ -23,6 +26,10 @@ class CarsOverviewFragment : BaseFragment<CarsOverviewViewModel, FragmentCarsOve
     override fun initialize(savedInstanceState: Bundle?) {
         binder.viewModel = viewModel
         binder.carItemClickListener = this
+
+        viewModel.error.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_LONG).show()
+        }
     }
 
     override fun onCarItemClicked(adapterPosition: Int) {
@@ -34,12 +41,16 @@ class CarsOverviewFragment : BaseFragment<CarsOverviewViewModel, FragmentCarsOve
     }
 
     override fun onDetailButtonClicked(carItem: CarUIModel) {
-        //TODO show detail screen
+        val action = CarsOverviewFragmentDirections.actionCarsOverviewFragmentToCarDetailFragment(carItem)
+        findNavController().navigate(action)
     }
 
     fun showMarkers(carItems: List<CarUIModel>) {
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync { map ->
+            map.uiSettings.isZoomControlsEnabled = true
+            val bottomPadding = requireContext().resources.getDimensionPixelSize(R.dimen.mapBottomPadding)
+            map.setPadding(0,0,0,bottomPadding)
             carItems.forEach { carModel ->
                 val position = LatLng(carModel.latitude ?: 0.0, carModel.longitude ?: 0.0)
                 val markerOptions = MarkerOptions().position(position).title(carModel.name)
@@ -54,7 +65,7 @@ class CarsOverviewFragment : BaseFragment<CarsOverviewViewModel, FragmentCarsOve
                 false
             }
         }
-
+        binder.map.visibility = View.VISIBLE
     }
 
     private fun applyZoomToMarkers(markerList: List<Marker>, mapFragment: SupportMapFragment, map: GoogleMap) {

@@ -4,5 +4,9 @@
     <dimen name="recycler_view_padding">10dp</dimen>
     <dimen name="recycler_view_element_horizontal_margin">5dp</dimen>
     <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
     <dimen name="material_card_view_stroke_width">2dp</dimen>
+    <dimen name="mapBottomPadding">210dp</dimen>
+
+    <dimen name="text_size_22">22sp</dimen>
 </resources>

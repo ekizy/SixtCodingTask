@@ -13,7 +13,7 @@ import javax.inject.Inject
 class CarsOverviewViewModel @Inject constructor(private val getCarsUseCase: GetCarsUseCase) : BaseViewModel() {
 
     var result: MutableLiveData<List<CarUIModel>> = MutableLiveData()
-    val isProgressVisible: MutableLiveData<Boolean> = MutableLiveData()
+    var error: MutableLiveData<ErrorException> = MutableLiveData()
 
     init {
         getCars()
@@ -21,10 +21,8 @@ class CarsOverviewViewModel @Inject constructor(private val getCarsUseCase: GetC
 
     private fun getCars() {
         bgScope.launch {
-            isProgressVisible.postValue(true)
             val carsResult = getCarsUseCase.run()
             withContext(Dispatchers.Main) {
-                isProgressVisible.postValue(false)
                 carsResult.decide(::handleError, ::handleSuccess)
             }
         }
@@ -35,8 +33,7 @@ class CarsOverviewViewModel @Inject constructor(private val getCarsUseCase: GetC
     }
 
     private fun handleError(errorException: ErrorException) {
-        print("show Error")
-        //TODO handle error
+        error.postValue(errorException)
     }
 
 }

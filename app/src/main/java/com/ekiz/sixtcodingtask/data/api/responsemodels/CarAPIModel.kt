@@ -1,9 +1,6 @@
 package com.ekiz.sixtcodingtask.data.api.responsemodels
 
-import com.ekiz.sixtcodingtask.data.uimodels.CarUIModel
-import com.ekiz.sixtcodingtask.data.uimodels.FuelType
-import com.ekiz.sixtcodingtask.data.uimodels.InnerCleanlinessType
-import com.ekiz.sixtcodingtask.data.uimodels.TransmissionType
+import com.ekiz.sixtcodingtask.data.uimodels.*
 import com.google.gson.annotations.SerializedName
 
 data class CarAPIModel(@SerializedName("id")
@@ -46,7 +43,7 @@ data class CarAPIModel(@SerializedName("id")
             name,
             make,
             group,
-            color,
+            getColorType(),
             series,
             getFuelType(),
             fuelLevel,
@@ -80,6 +77,22 @@ data class CarAPIModel(@SerializedName("id")
             "P" -> FuelType.PETROL
             "D" -> FuelType.DIESEL
             "E" -> FuelType.ETHANOL
+            else -> null
+        }
+    }
+
+    private fun getColorType() : ColorType? {
+        return when (color) {
+            "midnight_black" -> ColorType.MIDNIGHT_BLACK
+            "hot_chocolate" -> ColorType.HOT_CHOCOLATE
+            "midnight_black_metal" -> ColorType.MIDNIGHT_BLACK_METAL
+            "light_white" -> ColorType.LIGHT_WHITE
+            "iced_chocolate" -> ColorType.ICED_CHOCOLATE
+            "alpinweiss" -> ColorType.ALPINE_WHITE
+            "saphirschwarz" -> ColorType.SAPPHIRE_BLACK
+            "iced_chocolate_metal" -> ColorType.ICED_CHOCOLATE_METAL
+            "absolute_black_metal" -> ColorType.ABSOLUTE_BLACK_METAL
+            "schwarz" -> ColorType.BLACK
             else -> null
         }
     }

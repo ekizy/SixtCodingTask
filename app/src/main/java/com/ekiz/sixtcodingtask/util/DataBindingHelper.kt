@@ -1,5 +1,6 @@
 package com.ekiz.sixtcodingtask.util
 
+import android.view.View.VISIBLE
 import androidx.databinding.BindingAdapter
 import androidx.fragment.app.findFragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +17,7 @@ object DataBindingHelper {
     fun setCarsRecyclerView(recyclerView: RecyclerView, items: List<CarUIModel>?, carItemClickListener: CarsOverviewAdapter.CarItemClickListener) {
         items?.let { carItems ->
             recyclerView.run {
+                recyclerView.visibility = VISIBLE
                 setHasFixedSize(true)
                 adapter = CarsOverviewAdapter(carItems, carItemClickListener)
                 layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
