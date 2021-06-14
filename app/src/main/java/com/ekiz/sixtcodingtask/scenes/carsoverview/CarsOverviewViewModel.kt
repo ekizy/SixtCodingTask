@@ -5,6 +5,7 @@ import com.ekiz.sixtcodingtask.base.BaseViewModel
 import com.ekiz.sixtcodingtask.data.uimodels.CarUIModel
 import com.ekiz.sixtcodingtask.domain.GetCarsUseCase
 import com.ekiz.sixtcodingtask.util.ErrorException
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -15,11 +16,7 @@ class CarsOverviewViewModel @Inject constructor(private val getCarsUseCase: GetC
     var result: MutableLiveData<List<CarUIModel>> = MutableLiveData()
     var error: MutableLiveData<ErrorException> = MutableLiveData()
 
-    init {
-        getCars()
-    }
-
-    private fun getCars() {
+    fun getCars() {
         bgScope.launch {
             val carsResult = getCarsUseCase.run()
             withContext(Dispatchers.Main) {

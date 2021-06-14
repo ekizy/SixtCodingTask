@@ -26,7 +26,8 @@ ext {
     jUnitVersion = '4.13.2'
     mockitoVersion = '3.3.3'
     robolectricVersion = '4.5.1'
-    testCoreVersion = '1.1.2'
+    androidXJunitVersion = '1.1.2'
+    testCoreVersion = '1.1.0'
     espressoVersion='3.3.0'
 
 // app dependencies
@@ -79,11 +80,14 @@ ext {
     commonTestDependencies = [
             "junit:junit:$jUnitVersion",
             "org.mockito:mockito-core:$mockitoVersion",
-            "org.robolectric:robolectric:$robolectricVersion"
+            "org.robolectric:robolectric:$robolectricVersion",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinxCoroutinesVersion",
+            "androidx.test:core:$testCoreVersion"
+
     ]
 
     commonInstrumentationTestDependencies = [
-            "androidx.test.ext:junit:$testCoreVersion",
+            "androidx.test.ext:junit:$androidXJunitVersion",
             "androidx.test.espresso:espresso-core:$espressoVersion",
             "androidx.navigation:navigation-testing:$navigationVersion"
     ]

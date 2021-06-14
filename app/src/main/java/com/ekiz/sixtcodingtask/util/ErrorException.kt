@@ -1,11 +1,10 @@
 package com.ekiz.sixtcodingtask.util
 
-import java.io.IOException
+import java.lang.Exception
 
-sealed class ErrorException : IOException() {
+sealed class ErrorException : Exception() {
 
-    object EmptyResponse : ErrorException()
     object NoConnectionError : ErrorException()
-    class APIError(override var message: String?) : ErrorException()
+    class APIError(override var message: String? = null) : ErrorException()
 
 }

@@ -5,12 +5,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 
-abstract class BaseViewModel : ViewModel() {
+abstract class BaseViewModel(private val coroutineScopeProvider: CoroutineScope? = null) : ViewModel() {
 
     private val viewModelJob = SupervisorJob()
+    var bgScope = CoroutineScope(Dispatchers.Default + viewModelJob)
 
-    protected val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
-    protected val bgScope = CoroutineScope(Dispatchers.Default + viewModelJob)
 
     override fun onCleared() {
         super.onCleared()

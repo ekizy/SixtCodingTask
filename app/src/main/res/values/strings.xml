@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">SixtCodingTask</string>
     <string name="detail_button_text">Detail</string>
+    <string name="detail_car_name_title">Name:</string>
+    <string name="detail_car_make_title">Make:</string>
+    <string name="detail_car_model_name_title">Model Name:</string>
+    <string name="detail_car_group_title">Group:</string>
+    <string name="detail_car_color_title">Color:</string>
+    <string name="detail_car_series_title">Series:</string>
+    <string name="detail_car_fuel_type_title">Fuel Type:</string>
+    <string name="detail_car_fuel_level_title">Fuel Level:</string>
+    <string name="detail_car_transmission_title">Tranmission:</string>
+    <string name="detail_car_license_plate_title">License Plate:</string>
+    <string name="detail_car_inner_cleanliness_title">Series:</string>
+
+
 </resources>
